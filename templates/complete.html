@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Style image</title>
+</head>
+<body style = "background-color: antiquewhite;">
+	Upload complete!
+	
+	{% for image_name in image_names %}
+		<div>
+			<p>
+			<label for = "original image" >Original image</label><br>
+			<img  id = "original image" src="{{url_for('send_original_image', filename=image_name)}}", width = 600px>
+			<label for = "Changed image" >Changed image</label>
+			<img id = "changed image" src="{{url_for('send_processed_image', filename=image_name, selected_style=selected_style)}}">
+			
+
+			
+		</div>
+	{% endfor %}
+
+</body>
+</body>
+</html>
